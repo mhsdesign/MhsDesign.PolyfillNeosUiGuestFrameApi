@@ -4,6 +4,8 @@
 
 > When Neos.Ui version greater or equal to 7.2 is installed, this package does 'nothing' ^^ (no js will be loaded)
 
+### Why do i need it
+
 This package provides a polyfill to access the package `'@neos-project/neos-ui-guest-frame'` via the custom consumerApi solution of the Neos.Ui on earlier Ui versions.
 
 Neos.Ui supports since [FEATURE: Consumer Api for @neos-project/neos-ui-guest-frame #2945](https://github.com/neos/neos-ui/pull/2945/)
@@ -14,6 +16,8 @@ But that will work only work when the extension is used with a Neos.Ui host with
 
 This package serves as a polyfill for previous Neos.Ui Version (back to 5.3).
 
+### Implementation
+
 The implementation is rather hacky as we need to implement in the Host Ui what will later be implemented here:
 https://github.com/neos/neos-ui/blob/master/packages/neos-ui/src/apiExposureMap.js#L148
 
@@ -23,3 +27,6 @@ Of course, this makes use of global javascript objects and functions internally 
 If something were to be changed, the javascript will tell you with nice crafted messages in the console ;)
 
 When Neos.Ui version greater or equal to 7.2 is installed, this package does nothing  ^^ (no js will be loaded)
+
+### Replace this package
+If you dont want to include the polyfill, because you know you have at least ui 7.2 installed, then you can do a simple composer replace a la: https://github.com/neos/flow-development-collection/blob/d559aca053fd64a3b2d8ed3e3c19942f61f3b9ee/composer.json#L40 
