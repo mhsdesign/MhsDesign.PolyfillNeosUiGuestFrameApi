@@ -1,0 +1,53 @@
+.style__markHoveredNodeAsHovered___3ChWo {
+    outline-offset: 10px;
+    outline: 2px solid rgba(0,0,0, .2);
+}
+.style__markHiddenNodeAsHidden___9YDNa {
+    opacity: .3;
+}
+.style__addEmptyContentCollectionOverlay___1BLjc {
+    height: 20px;
+    width: 100%;
+    outline: 2px solid #adadad;
+}
+.style__markActiveNodeAsFocused--focusedNode___1H72U {
+    outline-offset: 10px;
+    outline: 2px solid #00ADEE;
+}
+.neos-contentelement-shine-through:hover.style__markHoveredNodeAsHovered___3ChWo {
+    outline-color: #ff8700;
+}
+.neos-contentelement-shine-through.style__markActiveNodeAsFocused--focusedNode___1H72U {
+    outline-color: #ff8700;
+}
+.neos-inline-editable:focus {
+    outline: none;
+}
+[data-neos-inline-editor-is-initialized]:hover {
+    outline-offset: 5px;
+    outline: 2px dashed #00ADEE;
+}
+.style__notInlineEditableOverlay___3y83v {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, rgba(50, 50, 50, .1), rgba(50, 50, 50, .2), rgba(50, 50, 50, .1));
+}
+.ck-content .table table td {
+    padding: 5px;
+    border: 1px solid gray;
+}
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+body::-webkit-scrollbar-track {
+    background-color: #141414 !important;
+}
+
+
+/*# sourceMappingURL=Plugin.css.map*/

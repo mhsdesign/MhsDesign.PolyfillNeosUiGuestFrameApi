@@ -1,0 +1,17 @@
+Neos:
+  Neos:
+    Ui:
+      resources:
+        # https://github.com/mhsdesign/neos-ui/blob/841ad5de8eea761371cb9ded040674ab48698491/Configuration/Settings.yaml#L40
+        javascript:
+          'MhsDesign.PolyfillNeosUiGuestFrameApi':
+            # empty '' will just render an empty script src ...
+            resource: "${MhsDesign.PolyfillNeosUiGuestFrameApi.Polyfill.use() ? 'resource://MhsDesign.PolyfillNeosUiGuestFrameApi/Public/Plugin.js' : ''}"
+            position: 'start 850'
+
+      # They say it's not API ...
+      # even if this will change in the future it doesnt break anything since `MhsDesign.PolyfillNeosUiGuestFrameApi.Polyfill.use()` will return null,
+      # and no script will be rendered.
+      # https://github.com/mhsdesign/neos-ui/blob/841ad5de8eea761371cb9ded040674ab48698491/Configuration/Settings.yaml#L109
+      configurationDefaultEelContext:
+        MhsDesign.PolyfillNeosUiGuestFrameApi.Polyfill: MhsDesign\PolyfillNeosUiGuestFrameApi\PolyfillHelper
