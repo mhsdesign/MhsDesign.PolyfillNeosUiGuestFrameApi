@@ -17,11 +17,21 @@ const addExportToConsumerApi = () => {
     const getAllPackageFromConsumerApi = (...args) => {
         const packages = consumerApiBeforeChange(...args);
 
+        if (typeof packages !== 'object') {
+            console.error(`Polyfill: 'MhsDesign.PolyfillNeosUiGuestFrameApi', expected 'packages' to be an object. 1643141500`);
+            return packages;
+        }
+
+        if (typeof packages['NeosUiGuestFrameDom'] === 'object') {
+            console.error(`Polyfill: 'MhsDesign.PolyfillNeosUiGuestFrameApi', was loaded even though 'NeosUiGuestFrameDom' exists already. 1643141501`);
+            return packages;
+        }
+
         // idk if we need this try catch
         try {
             // that's why were here:
             // packages.NeosUiGuestFrameDom = NeosUiGuestFrameDom;
-            Object.defineProperty(packages, "NeosUiGuestFrameDom", {
+            Object.defineProperty(packages, 'NeosUiGuestFrameDom', {
                 value: NeosUiGuestFrameDom
             });
         } catch (e) {
