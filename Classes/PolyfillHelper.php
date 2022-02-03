@@ -29,7 +29,7 @@ class PolyfillHelper implements ProtectedContextAwareInterface
 
     public function use(): bool
     {
-        return self::neosUiVersionIsLessThan72($this->objectManager);
+        return static::neosUiVersionIsLessThan72($this->objectManager);
     }
 
     public function allowsCallOfMethod($methodName)
